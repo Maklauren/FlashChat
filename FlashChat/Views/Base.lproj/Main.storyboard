@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tmO-wJ-JXE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -28,6 +28,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="028-eu-n8z" kind="show" id="763-Cd-NYM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrM-gO-EEd">
                                 <rect key="frame" x="0.0" y="745" width="414" height="48"/>
@@ -41,9 +44,12 @@
                                     <color key="titleColor" name="BrandBlue"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Kdc-hn-aXQ" kind="show" id="ufr-d7-ln0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kH-6X-NdV">
-                                <rect key="frame" x="53.5" y="423" width="307.5" height="60"/>
+                                <rect key="frame" x="53.5" y="445" width="307.5" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cMu-Z4-B1N"/>
                                 </constraints>
@@ -65,13 +71,14 @@
                             <constraint firstItem="3kH-6X-NdV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oDQ-to-nSn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Xo6-aR-DHF"/>
                     <connections>
                         <outlet property="titleLabel" destination="3kH-6X-NdV" id="l8w-bC-iWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="80"/>
+            <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="d7P-a2-x52">
@@ -82,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgu-9U-j5O" userLabel="EmailView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="177"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="177"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="0be-QS-QNf">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
@@ -107,7 +114,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FO4-sf-TXu" userLabel="PasswordView">
-                                <rect key="frame" x="0.0" y="139" width="414" height="177"/>
+                                <rect key="frame" x="0.0" y="183" width="414" height="177"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13J-t4-mEE">
                                         <rect key="frame" x="0.0" y="126" width="414" height="51"/>
@@ -154,10 +161,14 @@
                             <constraint firstItem="FO4-sf-TXu" firstAttribute="top" secondItem="L6f-NT-G0R" secondAttribute="bottom" id="lNp-LD-VXq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Tjy-GL-Hzm"/>
+                    <connections>
+                        <segue destination="JXR-OS-AwF" kind="show" identifier="RegisterToChat" id="lEL-54-wZL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXA-eA-esX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-261"/>
+            <point key="canvasLocation" x="1860.8695652173915" y="-261.16071428571428"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="qsI-Ut-6bo">
@@ -168,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHE-AI-YpY" userLabel="EmailView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="177"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="177"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="CxB-sD-v6Q">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
@@ -193,7 +204,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezW-Sn-dwh" userLabel="PasswordView">
-                                <rect key="frame" x="0.0" y="121" width="414" height="177"/>
+                                <rect key="frame" x="0.0" y="165" width="414" height="177"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="Tn9-uu-iXD">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
@@ -240,10 +251,14 @@
                             <constraint firstItem="ezW-Sn-dwh" firstAttribute="leading" secondItem="IEi-AP-Ih1" secondAttribute="leading" id="rWP-NX-oVN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Q6Y-pe-dhw"/>
+                    <connections>
+                        <segue destination="JXR-OS-AwF" kind="show" identifier="LoginToChat" id="LDO-B3-6Lt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fc-fF-Tbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="492"/>
+            <point key="canvasLocation" x="1860.8695652173915" y="491.51785714285711"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="F0j-zY-9pe">
@@ -254,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-fs-QpN">
-                                <rect key="frame" x="0.0" y="44" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="714"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" id="yoA-nQ-xTk">
@@ -314,12 +329,34 @@
                             <constraint firstItem="e8L-xX-alE" firstAttribute="leading" secondItem="I4i-s2-gpZ" secondAttribute="leading" id="zR1-gg-r7R"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NON-Wj-Zs3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZd-Zd-daf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="80"/>
+            <point key="canvasLocation" x="2844.9275362318845" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fXa-qC-bgw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tmO-wJ-JXE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nII-GW-DX6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yC7-Rs-DhE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ras-LL-xg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lEL-54-wZL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="textfield" width="298" height="93"/>
