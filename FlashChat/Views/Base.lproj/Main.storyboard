@@ -339,7 +339,17 @@
                             <constraint firstItem="e8L-xX-alE" firstAttribute="leading" secondItem="I4i-s2-gpZ" secondAttribute="leading" id="zR1-gg-r7R"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NON-Wj-Zs3"/>
+                    <navigationItem key="navigationItem" id="NON-Wj-Zs3">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="FkJ-IJ-lgC">
+                            <connections>
+                                <action selector="logOutPressed:" destination="JXR-OS-AwF" id="xgx-11-cS3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageTextField" destination="ou1-Gs-Dfw" id="ezO-Ra-fdY"/>
+                        <outlet property="tableView" destination="Afg-fs-QpN" id="i9k-0l-XRs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZd-Zd-daf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
