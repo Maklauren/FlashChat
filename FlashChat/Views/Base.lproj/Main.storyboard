@@ -122,6 +122,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" name="BrandBlue"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="Kdc-hn-aXQ" eventType="touchUpInside" id="hea-QO-gpx"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="jKD-Zo-v31">
                                         <rect key="frame" x="0.0" y="20" width="414" height="137"/>
@@ -163,6 +166,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tjy-GL-Hzm"/>
                     <connections>
+                        <outlet property="emailTextField" destination="L6f-NT-G0R" id="2m7-Xd-BsC"/>
+                        <outlet property="passwordTextField" destination="aRx-fE-Xy6" id="SGa-oK-Wt1"/>
                         <segue destination="JXR-OS-AwF" kind="show" identifier="RegisterToChat" id="lEL-54-wZL"/>
                     </connections>
                 </viewController>
@@ -221,6 +226,9 @@
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" name="BrandLightBlue"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="028-eu-n8z" eventType="touchUpInside" id="eaJ-MN-vqH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -253,6 +261,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Q6Y-pe-dhw"/>
                     <connections>
+                        <outlet property="emailTextField" destination="Edp-Ba-Akk" id="f3H-4N-yXd"/>
+                        <outlet property="passwordTextField" destination="VIb-jO-cyw" id="AoP-ek-YFp"/>
                         <segue destination="JXR-OS-AwF" kind="show" identifier="LoginToChat" id="LDO-B3-6Lt"/>
                     </connections>
                 </viewController>
@@ -355,7 +365,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lEL-54-wZL"/>
+        <segue reference="LDO-B3-6Lt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
