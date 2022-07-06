@@ -323,6 +323,9 @@
                                                 </hierarchicalColors>
                                             </imageReference>
                                         </state>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="JXR-OS-AwF" eventType="touchUpInside" id="7Hf-Ft-YiN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BrandLightBlue"/>

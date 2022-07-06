@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ChatViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class ChatViewController: UIViewController {
     
     private var messages: [Message] = []
     
+    private var database = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +27,6 @@ class ChatViewController: UIViewController {
         navigationItem.hidesBackButton = true
         
         tableView.dataSource = self
-        
         tableView.register(UINib(nibName: Key.cellNibName, bundle: nil), forCellReuseIdentifier: Key.cellIdentifier)
     }
     
@@ -35,6 +37,20 @@ class ChatViewController: UIViewController {
             navigationController?.popToRootViewController(animated: true)
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    @IBAction func sendPressed(_ sender: UIButton) {
+        if let messageSender = Auth.auth().currentUser?.email, let messageBody = messageTextField.text {
+            database.collection(Key.FStore.collectionName).addDocument(data: [
+                Key.FStore.senderField:messageSender,
+                Key.FStore.bodyField:messageBody]) { error in
+                    if let error = error {
+                        print("There was an issue saving data to firestore, \(error)")
+                    } else {
+                        self.messageTextField.text = ""
+                    }
+                }
         }
     }
 }
