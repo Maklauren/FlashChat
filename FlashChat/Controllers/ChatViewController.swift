@@ -28,6 +28,32 @@ class ChatViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.register(UINib(nibName: Key.cellNibName, bundle: nil), forCellReuseIdentifier: Key.cellIdentifier)
+        
+        loadMessages()
+    }
+    
+    private func loadMessages() {
+        database.collection(Key.FStore.collectionName).getDocuments { querySnapshot, error in
+            if let error = error {
+                print("There was an issue retrieving data from Firebase. \(error)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        
+                        if let messageSender = data[Key.FStore.senderField] as? String, let messageBody = data[Key.FStore.bodyField] as? String {
+                            let message = Message(sender: messageSender, body: messageBody)
+                            
+                            self.messages.append(message)
+                        }
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
