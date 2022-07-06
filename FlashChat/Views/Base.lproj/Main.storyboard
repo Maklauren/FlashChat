@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️FlashChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kH-6X-NdV">
-                                <rect key="frame" x="53.5" y="445" width="307.5" height="60"/>
+                                <rect key="frame" x="53.5" y="345" width="307.5" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cMu-Z4-B1N"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                         <constraints>
                             <constraint firstItem="OrM-gO-EEd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Xh-9z-wvw"/>
                             <constraint firstItem="EUf-oK-yL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ti4-2g-N7P"/>
-                            <constraint firstItem="3kH-6X-NdV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="V8a-xV-bHR"/>
+                            <constraint firstItem="3kH-6X-NdV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-100" id="V8a-xV-bHR"/>
                             <constraint firstItem="OrM-gO-EEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aP3-by-iJC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EUf-oK-yL1" secondAttribute="bottom" id="aq7-fW-9jO"/>
                             <constraint firstItem="EUf-oK-yL1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bpC-PJ-D7b"/>
