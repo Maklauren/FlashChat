@@ -73,7 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xo6-aR-DHF"/>
                     <connections>
-                        <outlet property="titleLabel" destination="3kH-6X-NdV" id="l8w-bC-iWa"/>
+                        <outlet property="appNameLabel" destination="3kH-6X-NdV" id="l8w-bC-iWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
