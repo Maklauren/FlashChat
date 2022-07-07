@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import IQKeyboardManager
 
 class ChatViewController: UIViewController {
     
@@ -33,7 +34,9 @@ class ChatViewController: UIViewController {
     }
     
     private func loadMessages() {
-        database.collection(Key.FStore.collectionName).getDocuments { querySnapshot, error in
+        database.collection(Key.FStore.collectionName).order(by: Key.FStore.dateField).addSnapshotListener { querySnapshot, error in
+            self.messages = []
+            
             if let error = error {
                 print("There was an issue retrieving data from Firebase. \(error)")
             } else {
@@ -69,14 +72,16 @@ class ChatViewController: UIViewController {
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageSender = Auth.auth().currentUser?.email, let messageBody = messageTextField.text {
             database.collection(Key.FStore.collectionName).addDocument(data: [
-                Key.FStore.senderField:messageSender,
-                Key.FStore.bodyField:messageBody]) { error in
-                    if let error = error {
-                        print("There was an issue saving data to firestore, \(error)")
-                    } else {
-                        self.messageTextField.text = ""
-                    }
+                Key.FStore.senderField : messageSender,
+                Key.FStore.bodyField : messageBody,
+                Key.FStore.dateField : Date().timeIntervalSince1970
+            ]) { error in
+                if let error = error {
+                    print("There was an issue saving data to firestore, \(error)")
+                } else {
+                    self.messageTextField.text = ""
                 }
+            }
         }
     }
 }
