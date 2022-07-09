@@ -23,8 +23,6 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = Key.appName
-        
         navigationItem.hidesBackButton = true
         
         tableView.dataSource = self
@@ -54,6 +52,9 @@ class ChatViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    
+                    let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 }
             }
         }
@@ -79,7 +80,9 @@ class ChatViewController: UIViewController {
                 if let error = error {
                     print("There was an issue saving data to firestore, \(error)")
                 } else {
-                    self.messageTextField.text = ""
+                    DispatchQueue.main.async {
+                        self.messageTextField.text = ""
+                    }
                 }
             }
         }
@@ -92,8 +95,25 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Key.cellIdentifier, for: indexPath) as! MessageCell
         cell.messageLabel.text = messages[indexPath.row].body
+        cell.messageBubble.backgroundColor = UIColor(named: Key.BrandColors.lighBlue)
+        cell.messageLabel.textColor = UIColor(named: Key.BrandColors.blue)
+        
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+//            cell.messageBubble.backgroundColor = UIColor(named: Key.BrandColors.lighBlue)
+//            cell.messageLabel.textColor = UIColor(named: Key.BrandColors.blue)
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+//            cell.messageBubble.backgroundColor = UIColor(named: Key.BrandColors.lightPurple)
+//            cell.messageLabel.textColor = UIColor(named: Key.BrandColors.purple)
+        }
+        
         return cell
     }
 }

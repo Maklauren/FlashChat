@@ -271,7 +271,7 @@
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="491.51785714285711"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--⚡️FlashChat-->
         <scene sceneID="F0j-zY-9pe">
             <objects>
                 <viewController storyboardIdentifier="ChatVC" id="JXR-OS-AwF" customClass="ChatViewController" customModule="FlashChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -340,7 +340,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I4i-s2-gpZ"/>
-                        <color key="backgroundColor" name="BrandLightBlue"/>
+                        <color key="backgroundColor" name="BrandBlue"/>
                         <constraints>
                             <constraint firstItem="I4i-s2-gpZ" firstAttribute="bottom" secondItem="e8L-xX-alE" secondAttribute="bottom" id="HDO-nm-DbU"/>
                             <constraint firstItem="Afg-fs-QpN" firstAttribute="top" secondItem="I4i-s2-gpZ" secondAttribute="top" id="QE8-cV-Jp1"/>
@@ -351,7 +351,7 @@
                             <constraint firstItem="e8L-xX-alE" firstAttribute="leading" secondItem="I4i-s2-gpZ" secondAttribute="leading" id="zR1-gg-r7R"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NON-Wj-Zs3">
+                    <navigationItem key="navigationItem" title="⚡️FlashChat" id="NON-Wj-Zs3">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="FkJ-IJ-lgC">
                             <connections>
                                 <action selector="logOutPressed:" destination="JXR-OS-AwF" id="xgx-11-cS3"/>
@@ -375,6 +375,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nII-GW-DX6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="BrandBlue"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
